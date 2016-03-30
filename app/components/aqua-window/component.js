@@ -1,0 +1,1 @@
+export { default } from 'ember-aqua-window/components/aqua-window/component';
