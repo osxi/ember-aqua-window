@@ -6,14 +6,10 @@ moduleForComponent('aqua-window', 'Integration | Component | aqua window', {
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{aqua-window}}`);
 
   assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
   this.render(hbs`
     {{#aqua-window}}
       template block text
@@ -21,4 +17,16 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+});
+
+test('can unescape HTML content', function(assert) {
+  this.set('html', `<h2>Welcome to Ember</h2>`);
+
+  this.render(hbs`
+    {{aqua-window content=html}}
+  `);
+
+  let h2Length = this.$('h2').length;
+
+  assert.equal(h2Length, 1, 'One <h1> tag is rendered.');
 });
