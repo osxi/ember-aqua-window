@@ -1,6 +1,6 @@
 {
   "name": "ember-aqua-window",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Ember addon that provides an Aqua-like container.",
   "directories": {
     "doc": "doc",
